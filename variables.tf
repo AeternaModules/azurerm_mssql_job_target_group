@@ -20,7 +20,7 @@ EOT
       database_name     = optional(string)
       elastic_pool_name = optional(string)
       job_credential_id = optional(string)
-      membership_type   = optional(string, "Include")
+      membership_type   = optional(string) # Default: "Include"
       server_name       = string
     }))
   }))
