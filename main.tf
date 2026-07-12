@@ -5,7 +5,7 @@ resource "azurerm_mssql_job_target_group" "mssql_job_target_groups" {
   name         = each.value.name
 
   dynamic "job_target" {
-    for_each = each.value.job_target != null ? [each.value.job_target] : []
+    for_each = each.value.job_target != null ? each.value.job_target : []
     content {
       database_name     = job_target.value.database_name
       elastic_pool_name = job_target.value.elastic_pool_name

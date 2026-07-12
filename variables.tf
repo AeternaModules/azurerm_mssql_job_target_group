@@ -16,13 +16,13 @@ EOT
   type = map(object({
     job_agent_id = string
     name         = string
-    job_target = optional(object({
+    job_target = optional(list(object({
       database_name     = optional(string)
       elastic_pool_name = optional(string)
       job_credential_id = optional(string)
       membership_type   = optional(string) # Default: "Include"
       server_name       = string
-    }))
+    })))
   }))
 }
 
